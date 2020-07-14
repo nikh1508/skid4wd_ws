@@ -1,0 +1,140 @@
+<?xml version="1.0" ?>
+<robot name="skid4wd" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+<xacro:include filename="$(find skid4wd_description)/urdf/materials.xacro" />
+<xacro:include filename="$(find skid4wd_description)/urdf/skid4wd.trans" />
+<xacro:include filename="$(find skid4wd_description)/urdf/skid4wd.gazebo" />
+<link name="base_link">
+  <inertial>
+    <origin rpy="0 0 0" xyz="-0.010646286022740195 -4.919653835224294e-16 0.07524542881356616"/>
+    <mass value="47.91821428809842"/>
+    <inertia ixx="0.350848" ixy="0.0" ixz="0.027353" iyy="1.008832" iyz="-0.0" izz="1.186927"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="0 0 0"/>
+    <geometry>
+      <mesh filename="package://skid4wd_description/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="0 0 0"/>
+    <geometry>
+      <mesh filename="package://skid4wd_description/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="wheel_front_left_1">
+  <inertial>
+    <origin rpy="0 0 0" xyz="2.3943220794908626e-08 -0.009939147977344326 -1.8492763799449197e-08"/>
+    <mass value="0.552895033700559"/>
+    <inertia ixx="0.001246" ixy="0.0" ixz="-0.0" iyy="0.002096" iyz="-0.0" izz="0.001246"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="-0.125 -0.16 -0.03"/>
+    <geometry>
+      <mesh filename="package://skid4wd_description/meshes/wheel_front_left_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="-0.125 -0.16 -0.03"/>
+    <geometry>
+      <mesh filename="package://skid4wd_description/meshes/wheel_front_left_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="wheel_front_right_1">
+  <inertial>
+    <origin rpy="0 0 0" xyz="1.796076479210207e-08 0.009939147977344354 1.3632938049290555e-08"/>
+    <mass value="0.5528950337005641"/>
+    <inertia ixx="0.001246" ixy="-0.0" ixz="0.0" iyy="0.002096" iyz="-0.0" izz="0.001246"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="-0.125 0.16 -0.03"/>
+    <geometry>
+      <mesh filename="package://skid4wd_description/meshes/wheel_front_right_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="-0.125 0.16 -0.03"/>
+    <geometry>
+      <mesh filename="package://skid4wd_description/meshes/wheel_front_right_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="wheel_rear_left_1">
+  <inertial>
+    <origin rpy="0 0 0" xyz="2.481888500271978e-08 -0.009939147977344326 -1.6256707337930498e-08"/>
+    <mass value="0.552895033700561"/>
+    <inertia ixx="0.001246" ixy="0.0" ixz="-0.0" iyy="0.002096" iyz="-0.0" izz="0.001246"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="0.125 -0.16 -0.03"/>
+    <geometry>
+      <mesh filename="package://skid4wd_description/meshes/wheel_rear_left_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="0.125 -0.16 -0.03"/>
+    <geometry>
+      <mesh filename="package://skid4wd_description/meshes/wheel_rear_left_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="wheel_rear_right_1">
+  <inertial>
+    <origin rpy="0 0 0" xyz="2.1544820399954645e-08 0.00993914797734427 1.3912224119255745e-08"/>
+    <mass value="0.5528950337005801"/>
+    <inertia ixx="0.001246" ixy="-0.0" ixz="0.0" iyy="0.002096" iyz="-0.0" izz="0.001246"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="0.125 0.16 -0.03"/>
+    <geometry>
+      <mesh filename="package://skid4wd_description/meshes/wheel_rear_right_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="0.125 0.16 -0.03"/>
+    <geometry>
+      <mesh filename="package://skid4wd_description/meshes/wheel_rear_right_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<joint name="joint_front_left" type="continuous">
+  <origin rpy="0 0 0" xyz="0.125 0.16 0.03"/>
+  <parent link="base_link"/>
+  <child link="wheel_front_left_1"/>
+  <axis xyz="0.0 1.0 0.0"/>
+</joint>
+
+<joint name="joint_front_right" type="continuous">
+  <origin rpy="0 0 0" xyz="0.125 -0.16 0.03"/>
+  <parent link="base_link"/>
+  <child link="wheel_front_right_1"/>
+  <axis xyz="0.0 -1.0 0.0"/>
+</joint>
+
+<joint name="joint_rear_left" type="continuous">
+  <origin rpy="0 0 0" xyz="-0.125 0.16 0.03"/>
+  <parent link="base_link"/>
+  <child link="wheel_rear_left_1"/>
+  <axis xyz="0.0 1.0 0.0"/>
+</joint>
+
+<joint name="joint_rear_right" type="continuous">
+  <origin rpy="0 0 0" xyz="-0.125 -0.16 0.03"/>
+  <parent link="base_link"/>
+  <child link="wheel_rear_right_1"/>
+  <axis xyz="0.0 -1.0 0.0"/>
+</joint>
+
+</robot>

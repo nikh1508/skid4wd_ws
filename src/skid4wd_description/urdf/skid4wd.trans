@@ -1,0 +1,48 @@
+<?xml version="1.0" ?>
+<robot name="skid4wd" xmlns:xacro="http://www.ros.org/wiki/xacro" >
+
+<transmission name="joint_front_left_tran">
+  <type>transmission_interface/SimpleTransmission</type>
+  <joint name="joint_front_left">
+    <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+  </joint>
+  <actuator name="joint_front_left_actr">
+    <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    <mechanicalReduction>1</mechanicalReduction>
+  </actuator>
+</transmission>
+
+<transmission name="joint_front_right_tran">
+  <type>transmission_interface/SimpleTransmission</type>
+  <joint name="joint_front_right">
+    <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+  </joint>
+  <actuator name="joint_front_right_actr">
+    <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    <mechanicalReduction>1</mechanicalReduction>
+  </actuator>
+</transmission>
+
+<transmission name="joint_rear_left_tran">
+  <type>transmission_interface/SimpleTransmission</type>
+  <joint name="joint_rear_left">
+    <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+  </joint>
+  <actuator name="joint_rear_left_actr">
+    <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    <mechanicalReduction>1</mechanicalReduction>
+  </actuator>
+</transmission>
+
+<transmission name="joint_rear_right_tran">
+  <type>transmission_interface/SimpleTransmission</type>
+  <joint name="joint_rear_right">
+    <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+  </joint>
+  <actuator name="joint_rear_right_actr">
+    <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    <mechanicalReduction>1</mechanicalReduction>
+  </actuator>
+</transmission>
+
+</robot>
