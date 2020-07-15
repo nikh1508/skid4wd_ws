@@ -4,6 +4,9 @@
 <xacro:include filename="$(find skid4wd_description)/urdf/materials.xacro" />
 <xacro:include filename="$(find skid4wd_description)/urdf/skid4wd.trans" />
 <xacro:include filename="$(find skid4wd_description)/urdf/skid4wd.gazebo" />
+
+<xacro:property name="PI" value="3.14"/>
+
 <link name="base_link">
   <inertial>
     <origin rpy="0 0 0" xyz="-0.010646286022740195 -4.919653835224294e-16 0.07524542881356616"/>
@@ -15,7 +18,7 @@
     <geometry>
       <mesh filename="package://skid4wd_description/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
     </geometry>
-    <material name="silver"/>
+    <material name="orange"/>
   </visual>
   <collision>
     <origin rpy="0 0 0" xyz="0 0 0"/>
@@ -39,9 +42,9 @@
     <material name="silver"/>
   </visual>
   <collision>
-    <origin rpy="0 0 0" xyz="-0.125 -0.16 -0.03"/>
+    <origin rpy="${PI/2} 0 0" xyz="0 0 0"/>
     <geometry>
-      <mesh filename="package://skid4wd_description/meshes/wheel_front_left_1.stl" scale="0.001 0.001 0.001"/>
+      <cylinder length="0.07" radius="0.08"/>
     </geometry>
   </collision>
 </link>
@@ -60,9 +63,9 @@
     <material name="silver"/>
   </visual>
   <collision>
-    <origin rpy="0 0 0" xyz="-0.125 0.16 -0.03"/>
+    <origin rpy="${PI/2} 0 0" xyz="0 0 0"/>
     <geometry>
-      <mesh filename="package://skid4wd_description/meshes/wheel_front_right_1.stl" scale="0.001 0.001 0.001"/>
+      <cylinder length="0.07" radius="0.08"/>
     </geometry>
   </collision>
 </link>
@@ -81,9 +84,9 @@
     <material name="silver"/>
   </visual>
   <collision>
-    <origin rpy="0 0 0" xyz="0.125 -0.16 -0.03"/>
+    <origin rpy="${PI/2} 0 0" xyz="0 0 0"/>
     <geometry>
-      <mesh filename="package://skid4wd_description/meshes/wheel_rear_left_1.stl" scale="0.001 0.001 0.001"/>
+      <cylinder length="0.07" radius="0.08"/>
     </geometry>
   </collision>
 </link>
@@ -102,9 +105,9 @@
     <material name="silver"/>
   </visual>
   <collision>
-    <origin rpy="0 0 0" xyz="0.125 0.16 -0.03"/>
+    <origin rpy="${PI/2} 0 0" xyz="0 0 0"/>
     <geometry>
-      <mesh filename="package://skid4wd_description/meshes/wheel_rear_right_1.stl" scale="0.001 0.001 0.001"/>
+      <cylinder length="0.07" radius="0.08"/>
     </geometry>
   </collision>
 </link>
