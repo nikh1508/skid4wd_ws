@@ -35,9 +35,9 @@
     <inertia ixx="0.001246" ixy="0.0" ixz="-0.0" iyy="0.002096" iyz="-0.0" izz="0.001246"/>
   </inertial>
   <visual>
-    <origin rpy="0 0 0" xyz="-0.125 -0.16 -0.03"/>
+    <origin rpy="0 0 0" xyz="-0.01 0.005 -0.017"/>
     <geometry>
-      <mesh filename="package://skid4wd_description/meshes/wheel_front_left_1.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="package://skid4wd_description/meshes/wheel.dae"/>
     </geometry>
     <material name="silver"/>
   </visual>
@@ -56,9 +56,9 @@
     <inertia ixx="0.001246" ixy="-0.0" ixz="0.0" iyy="0.002096" iyz="-0.0" izz="0.001246"/>
   </inertial>
   <visual>
-    <origin rpy="0 0 0" xyz="-0.125 0.16 -0.03"/>
+    <origin rpy="0 0 ${PI}" xyz="0.01 -0.005 -0.017"/>
     <geometry>
-      <mesh filename="package://skid4wd_description/meshes/wheel_front_right_1.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="package://skid4wd_description/meshes/wheel.dae"/>
     </geometry>
     <material name="silver"/>
   </visual>
@@ -77,9 +77,9 @@
     <inertia ixx="0.001246" ixy="0.0" ixz="-0.0" iyy="0.002096" iyz="-0.0" izz="0.001246"/>
   </inertial>
   <visual>
-    <origin rpy="0 0 0" xyz="0.125 -0.16 -0.03"/>
+    <origin rpy="0 0 0" xyz="-0.01 0.005 -0.017"/>
     <geometry>
-      <mesh filename="package://skid4wd_description/meshes/wheel_rear_left_1.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="package://skid4wd_description/meshes/wheel.dae"/>
     </geometry>
     <material name="silver"/>
   </visual>
@@ -98,9 +98,9 @@
     <inertia ixx="0.001246" ixy="-0.0" ixz="0.0" iyy="0.002096" iyz="-0.0" izz="0.001246"/>
   </inertial>
   <visual>
-    <origin rpy="0 0 0" xyz="0.125 0.16 -0.03"/>
+    <origin rpy="0 0 ${PI}" xyz="0.01 -0.005 -0.017"/>
     <geometry>
-      <mesh filename="package://skid4wd_description/meshes/wheel_rear_right_1.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="package://skid4wd_description/meshes/wheel.dae"/>
     </geometry>
     <material name="silver"/>
   </visual>
