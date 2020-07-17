@@ -1,0 +1,9 @@
+<!-- Make sure that the simulation is running (and simulation is unpaused) before running rviz -->
+
+<!-- To Launch simulation run: 
+    $ roslaunch skid4wd_description sim_with_controller.launch 
+-->
+
+<launch>
+    <node name="rviz" pkg="rviz" type="rviz" args="-d $(find skid4wd_description)/rviz_config/config.rviz"/>
+</launch>

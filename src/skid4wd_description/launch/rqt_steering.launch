@@ -1,0 +1,5 @@
+<launch>
+    <node name="rqt_robot_steering" pkg="rqt_robot_steering" type="rqt_robot_steering">
+        <param name="default_topic" value="/skid4wd/drive_controller/cmd_vel"/> 
+    </node>
+</launch>
