@@ -117,13 +117,17 @@
   <parent link="base_link"/>
   <child link="wheel_front_left_1"/>
   <axis xyz="0.0 1.0 0.0"/>
+  <limit effort="10000" velocity="1000"/>
+  <joint_properties damping="1.0" friction="1.0"/>
 </joint>
 
 <joint name="joint_front_right" type="continuous">
   <origin rpy="0 0 0" xyz="0.125 -0.16 0.03"/>
   <parent link="base_link"/>
   <child link="wheel_front_right_1"/>
-  <axis xyz="0.0 -1.0 0.0"/>
+  <axis xyz="0.0 1.0 0.0"/>
+  <limit effort="10000" velocity="1000"/>
+  <joint_properties damping="1.0" friction="1.0"/>
 </joint>
 
 <joint name="joint_rear_left" type="continuous">
@@ -131,13 +135,17 @@
   <parent link="base_link"/>
   <child link="wheel_rear_left_1"/>
   <axis xyz="0.0 1.0 0.0"/>
+  <limit effort="10000" velocity="1000"/>
+  <joint_properties damping="1.0" friction="1.0"/>
 </joint>
 
 <joint name="joint_rear_right" type="continuous">
   <origin rpy="0 0 0" xyz="-0.125 -0.16 0.03"/>
   <parent link="base_link"/>
   <child link="wheel_rear_right_1"/>
-  <axis xyz="0.0 -1.0 0.0"/>
+  <axis xyz="0.0 1.0 0.0"/>
+  <limit effort="10000" velocity="1000"/>
+  <joint_properties damping="1.0" friction="1.0"/>
 </joint>
 
 </robot>

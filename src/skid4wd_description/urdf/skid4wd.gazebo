@@ -5,7 +5,9 @@
 <xacro:property name="wheel_color" value="Gazebo/Silver" />
 
 <gazebo>
-  <plugin filename="libgazebo_ros_control.so" name="control"/>
+  <plugin filename="libgazebo_ros_control.so" name="control">
+    <robotNamespace>/skid4wd</robotNamespace>
+  </plugin>
 </gazebo>
 <gazebo reference="base_link">
   <material>${body_color}</material>
