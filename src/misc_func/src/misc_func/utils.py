@@ -1,7 +1,10 @@
 #  Utility functions
 
+import math
+from tf.transformations import euler_from_quaternion, quaternion_from_euler
+
 # Mapping input to new range
-def map(x, in_low, in_high, out_low, out_high):
+def map_val(x, in_low, in_high, out_low, out_high):
     return (float(x - in_low) / float(in_high - in_low) * (out_high - out_low)) + out_low
 
 # Constrain input to given limits
@@ -26,3 +29,16 @@ def angle_diff(_inp, _set):
                 return diff
         else:
             return _inp - _set
+
+def rad2deg(rad):
+    return rad * 180. / math.pi
+
+def deg2rad(deg):
+    return deg * math.pi / 180.
+
+def quat2euler(quat, in_degrees=False):
+    (roll, pitch, yaw) = euler_from_quaternion([quat.x, quat.y, quat.z, quat.w])
+    return ([roll, pitch, yaw] if not in_degrees else map(rad2deg, [roll, pitch, yaw]))
+
+def get_dist(pose_init, pose_final):
+    return math.sqrt((pose_final.x - pose_init.x)**2 + (pose_final.y - pose_init.y)**2 + (pose_final.z - pose_init.z)**2)
