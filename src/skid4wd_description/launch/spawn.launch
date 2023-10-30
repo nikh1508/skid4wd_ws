@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <launch>
     <group ns="/skid4wd">
-        <param name="/skid4wd/robot_description" command="$(find xacro)/xacro.py $(find skid4wd_description)/urdf/skid4wd.xacro"/>
+        <param name="/skid4wd/robot_description" command="$(find xacro)/xacro $(find skid4wd_description)/urdf/skid4wd.xacro"/>
         <arg name="x" default="0"/>
         <arg name="y" default="0"/>
         <arg name="z" default="0"/>

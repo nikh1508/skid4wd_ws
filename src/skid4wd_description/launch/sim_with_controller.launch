@@ -5,7 +5,7 @@
     <!-- Launch Gazebo -->
     <include file="$(find gazebo_ros)/launch/empty_world.launch">
         <arg name="world_name" value="$(arg world_name)"/>
-        <arg name="paused" value="true"/>
+        <arg name="paused" value="false"/>
     </include>
 
     <!-- Spawn URDF Model -->
