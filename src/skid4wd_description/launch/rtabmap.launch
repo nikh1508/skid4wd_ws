@@ -1,0 +1,36 @@
+<launch>
+    <include file="$(find skid4wd_description)/launch/align_depth.launch"/>
+
+    <arg name="camera_name" value ="camera"/>
+    <arg name="robot_name" value ="skid4wd"/>
+
+    <!-- Set parameters for RTABMAP -->
+    <arg name="depth_topic" default="/$(arg robot_name)/$(arg camera_name)/depth/image_raw" />
+    <arg name="rgb_topic" default="/$(arg robot_name)/$(arg camera_name)/color/image_raw" />
+    <arg name="camera_info_topic" default="/$(arg robot_name)/$(arg camera_name)/color/camera_info" />
+    <arg name="approx_sync" default="true" />
+    <arg name="rviz" default="true" />
+    <arg name="rtabmap_viz" default="false" />
+    <arg name="visual_odometry" default="true" />
+    <!-- <arg name="odom_topic" default="/skid4wd/drive_controller/odom" /> -->
+    <arg name="rviz_cfg" default="$(find skid4wd_description)/rviz_config/rtabmap.rviz" />
+    <arg name="rtabmap_args" default="--delete_db_on_start"/>
+
+    <!-- Include rtabmap.launch with specified parameters -->
+    <include file="$(find rtabmap_launch)/launch/rtabmap.launch">
+        <arg name="depth_topic" value="$(arg depth_topic)" />
+        <arg name="rgb_topic" value="$(arg rgb_topic)" />
+        <arg name="camera_info_topic" value="$(arg camera_info_topic)" />
+        <arg name="approx_sync" value="$(arg approx_sync)" />
+        <arg name="rviz" value="$(arg rviz)" />
+        <arg name="rtabmap_viz" value="$(arg rtabmap_viz)" />
+        <arg name="visual_odometry" value="$(arg visual_odometry)" />
+        <!-- <arg name="odom_topic" value="$(arg odom_topic)" /> -->
+        <arg name="rviz_cfg"  value="$(arg rviz_cfg)" />
+        <arg name="rtabmap_args"  value="$(arg rtabmap_args)" />
+        <arg name="approx_sync_max_interval"  value="0.1" />
+        <arg name="frame_id"  value="base_link" />
+
+
+    </include>
+</launch>

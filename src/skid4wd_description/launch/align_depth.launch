@@ -1,0 +1,24 @@
+<launch>
+    <!--create aligned_depth_to_color/image_raw using depth_image_proc-->
+    <group ns="/skid4wd/camera">
+        <node pkg="nodelet" type="nodelet" name="nodelet_manager" args="manager" />
+
+        <node pkg="nodelet" type="nodelet" name="nodelet1"
+                args="load depth_image_proc/register nodelet_manager">
+            <remap from="rgb/camera_info" to="color/camera_info"/>
+            <remap from="depth/camera_info" to="depth/camera_info"/>
+            <remap from="depth/image_rect" to="depth/image_raw"/>
+            <remap from="depth_registered/camera_info" to="aligned_depth_to_color/camera_info"/>    
+            <remap from="depth_registered/image_rect" to="aligned_depth_to_color/image_raw"/>
+        </node>
+
+        <node pkg="nodelet" type="nodelet" name="nodelet2"
+                args="load depth_image_proc/point_cloud_xyzrgb nodelet_manager">
+            <remap from="rgb/image_rect_color" to="color/image_raw"/>
+            <remap from="rgb/camera_info" to="color/camera_info"/>
+            <remap from="depth_registered/camera_info" to="aligned_depth_to_color/camera_info"/>
+            <remap from="depth_registered/image_rect" to="aligned_depth_to_color/image_raw"/>
+            <remap from="depth_registered/points" to="depth/color/points"/>
+        </node>
+    </group>
+</launch>

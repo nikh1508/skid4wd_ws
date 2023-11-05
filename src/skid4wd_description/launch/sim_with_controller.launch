@@ -1,12 +1,15 @@
 <launch>
     <!-- Default: Empty World -->
-    <arg name="world_name" default="worlds/empty.world"/>
+    <!-- <arg name="world_name" default="worlds/empty.world"/> -->
+
 
     <!-- Launch Gazebo -->
-    <include file="$(find gazebo_ros)/launch/empty_world.launch">
-        <arg name="world_name" value="$(arg world_name)"/>
-        <arg name="paused" value="false"/>
+    <include file="$(find gazebo_terrain_tutorial)/launch/terrain_1.launch">
+    <!-- <include file="$(find gazebo_ros)/launch/empty_world.launch"> -->
+        <!-- <arg name="world_name" value="$(arg world_name)"/> -->
+        <!-- <arg name="paused" value="false"/> -->
     </include>
+
 
     <!-- Spawn URDF Model -->
     <include file="$(find skid4wd_description)/launch/spawn.launch"/>
