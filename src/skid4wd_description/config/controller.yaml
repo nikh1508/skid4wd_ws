@@ -35,3 +35,5 @@ skid4wd:
         max_velocity           : 4.0   # rad/s
         has_acceleration_limits: true
         max_acceleration       : 25.0   # rad/s^2
+
+    # pid: {p: 6.0, i: 21.0, d: 0.0, i_clamp_min: -255.0, i_clamp_max: 255, antiwindup: True}
